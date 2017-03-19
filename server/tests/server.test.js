@@ -22,6 +22,7 @@ beforeEach((done) => {
     }).then(() => done());
 });
 
+//insertion
 describe('POST /todos', () => {
   it('should create a new todo', (done) => {
     var text = 'test todo from test method';
@@ -61,6 +62,7 @@ describe('POST /todos', () => {
   });
 });
 
+//retrieve all
 describe('GET /todos', () =>{
   it('should get all todos', (done) => {
     request(app)
@@ -73,6 +75,7 @@ describe('GET /todos', () =>{
   });
 });
 
+//retrieve single
 describe('GET /todos/:id', () => {
   it('should return todo doc', (done) => {
     request(app)
@@ -100,6 +103,7 @@ describe('GET /todos/:id', () => {
   });
 });
 
+//delete
 describe('DELETE /todos/:id', () => {
   it('should remove a todo', (done) => {
     var hexId = todos[1]._id.toHexString();
@@ -133,3 +137,5 @@ describe('DELETE /todos/:id', () => {
       .end(done);
   });
 });
+
+//update
