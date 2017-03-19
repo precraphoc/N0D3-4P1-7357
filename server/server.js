@@ -59,14 +59,14 @@ app.delete('/todos/:id', (req, res) => {
   if (!ObjectID.isValid(id)) {
     return res.status(404).send();
   }
-  Todo.findByIdAndRemove(id).then((result) => {
-    if (result) {
-      res.status(200).send(JSON.stringify(result, undefined, 2));
+  Todo.findByIdAndRemove(id).then((todo) => {
+    if (todo) {
+      res.status(200).send({todo});
     } else {
-      res.status(404).send(`document not found`);
+      res.status(404).send();
     }
   }, (e) => {
-    res.status(400).send('error in retrieval of record');
+    res.status(400).send();
   });
 });
 
