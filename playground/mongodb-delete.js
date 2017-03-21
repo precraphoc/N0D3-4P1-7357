@@ -6,6 +6,7 @@ MongoClient.connect(
   (err, db) => {
     if (err) {
       return console.log(`Unable to connect to MongoDB server`);
+      
     }
     console.log(`Connected to MongoDB server`);
 
